@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "PySpringCrypt"
+version = "0.1.0"
+description = "Python native replacement for spring encrypt/decrypt"
+authors = ["Pekka Kiviniemi <pekka.kiviniemi@ekivi.com>"]
+readme = "README.md"
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = ">=3.8.1"
+pycryptodome = ">=3.10.1"
+
+[tool.poetry.dev-dependencies]
+black = ">=23.3.0"
+flake8 = ">=6.0.0"
+flake8-pyproject = ">=1.2.2"
+mypy = ">=1.4.0"
+pymarkdownlnt = ">=0.9.12"
+pytest = ">=7.1.1"
+pytest-cov = ">=4.0.0"
+coveralls = ">= 3.3.1"
+pylint = ">=3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = ["--strict-markers"]
+
+[tool.mypy]
+mypy_path = ["src"]
+files = ["src/**/*.py", "tests/**/*.py"]
+strict = true
+ignore_missing_imports = true
+warn_unused_ignores = true
+python_version = "3.8"
+show_error_codes = true
+
+[tool.flake8]
+# Check that this is aligned with your other tools like Black
+max-line-length = 100
+exclude = [
+    # No need to traverse our git directory
+    ".git",
+    # There's no value in checking cache directories
+    "__pycache__",
+    "env"
+]
+
+[tool.pylint.MASTER]
+init-hook = """
+import sys
+sys.path.extend(['src/', 'tests/'])
+"""
+jobs = 4
+
+[tool.black]
+line-length = 100
