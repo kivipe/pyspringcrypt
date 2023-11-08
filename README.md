@@ -1,7 +1,7 @@
 # Python replacement for Spring Crypt
 
 ![Tests](https://github.com/kivipe/pyspringcrypt/actions/workflows/tests.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/kivipe/pyspringcrypt/badge.svg?branch=coveralls)](https://coveralls.io/github/kivipe/pyspringcrypt?branch=coveralls)
+[![Coverage Status](https://coveralls.io/repos/github/kivipe/pyspringcrypt/badge.svg?branch=main)](https://coveralls.io/github/kivipe/pyspringcrypt?branch=main)
 
 This library aims to be a Pythonic replacement for `spring encrypt` and `spring decrypt` commands.
 
